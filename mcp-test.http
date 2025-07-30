@@ -1,0 +1,189 @@
+### MCP Streamable HTTP Server Test File
+### Base URL: http://localhost:3000/mcp
+### Content-Type: application/json
+### Accept: application/json, text/event-stream
+
+### 1. List all available tools
+POST http://localhost:3000/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "method": "tools/list",
+  "id": 1
+}
+
+###
+
+### 2. Get a random Chuck Norris joke
+POST http://localhost:3000/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "get-chuck-joke",
+    "arguments": {}
+  },
+  "id": 2
+}
+
+###
+
+### 3. Get Chuck Norris joke categories
+POST http://localhost:3000/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "get-chuck-categories",
+    "arguments": {}
+  },
+  "id": 3
+}
+
+###
+
+### 4. Get Chuck Norris joke by category (example: "animal")
+POST http://localhost:3000/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "get-chuck-joke-by-category",
+    "arguments": {
+      "category": "animal"
+    }
+  },
+  "id": 4
+}
+
+###
+
+### 5. Get Chuck Norris joke by category (example: "dev")
+POST http://localhost:3000/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "get-chuck-joke-by-category",
+    "arguments": {
+      "category": "dev"
+    }
+  },
+  "id": 5
+}
+
+###
+
+### 6. Get Chuck Norris joke by category (example: "movie")
+POST http://localhost:3000/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "get-chuck-joke-by-category",
+    "arguments": {
+      "category": "movie"
+    }
+  },
+  "id": 6
+}
+
+###
+
+### 7. Get a random dad joke
+POST http://localhost:3000/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "get-dad-joke",
+    "arguments": {}
+  },
+  "id": 7
+}
+
+###
+
+### 8. Initialize MCP session (optional)
+POST http://localhost:3000/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "method": "initialize",
+  "params": {
+    "protocolVersion": "2024-11-05",
+    "capabilities": {
+      "tools": {}
+    },
+    "clientInfo": {
+      "name": "REST Client",
+      "version": "1.0.0"
+    }
+  },
+  "id": 8
+}
+
+###
+
+### 9. Test invalid method (should return error)
+POST http://localhost:3000/mcp
+Content-Type: application/json
+Accept: application/json, text/event-stream
+
+{
+  "jsonrpc": "2.0",
+  "method": "invalid/method",
+  "id": 9
+}
+
+###
+
+### 10. Test GET request (should return Method not allowed)
+GET http://localhost:3000/mcp
+
+###
+
+### 11. Test root endpoint (should return Cannot GET /)
+GET http://localhost:3000/
+
+###
+
+### Available Chuck Norris Categories:
+### - animal
+### - career
+### - celebrity
+### - dev
+### - explicit
+### - fashion
+### - food
+### - history
+### - money
+### - movie
+### - music
+### - political
+### - religion
+### - science
+### - sport
+### - travel
