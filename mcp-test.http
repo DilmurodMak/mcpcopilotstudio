@@ -4,7 +4,7 @@
 ### Accept: application/json, text/event-stream
 
 ### 1. List all available tools
-POST http://localhost:3000/mcp
+POST https://jokeapp.azurewebsites.net/mcp
 Content-Type: application/json
 Accept: application/json, text/event-stream
 
@@ -17,7 +17,7 @@ Accept: application/json, text/event-stream
 ###
 
 ### 2. Get a random Chuck Norris joke
-POST http://localhost:3000/mcp
+POST https://jokeapp.azurewebsites.net/mcp
 Content-Type: application/json
 Accept: application/json, text/event-stream
 
@@ -34,7 +34,7 @@ Accept: application/json, text/event-stream
 ###
 
 ### 3. Get Chuck Norris joke categories
-POST http://localhost:3000/mcp
+POST https://jokeapp.azurewebsites.net/mcp
 Content-Type: application/json
 Accept: application/json, text/event-stream
 
@@ -51,7 +51,7 @@ Accept: application/json, text/event-stream
 ###
 
 ### 4. Get Chuck Norris joke by category (example: "animal")
-POST http://localhost:3000/mcp
+POST https://jokeapp.azurewebsites.net/mcp
 Content-Type: application/json
 Accept: application/json, text/event-stream
 
@@ -70,7 +70,7 @@ Accept: application/json, text/event-stream
 ###
 
 ### 5. Get Chuck Norris joke by category (example: "dev")
-POST http://localhost:3000/mcp
+POST https://jokeapp.azurewebsites.net/mcp
 Content-Type: application/json
 Accept: application/json, text/event-stream
 
@@ -89,7 +89,7 @@ Accept: application/json, text/event-stream
 ###
 
 ### 6. Get Chuck Norris joke by category (example: "movie")
-POST http://localhost:3000/mcp
+POST https://jokeapp.azurewebsites.net/mcp
 Content-Type: application/json
 Accept: application/json, text/event-stream
 
@@ -108,7 +108,7 @@ Accept: application/json, text/event-stream
 ###
 
 ### 7. Get a random dad joke
-POST http://localhost:3000/mcp
+POST https://jokeapp.azurewebsites.net/mcp
 Content-Type: application/json
 Accept: application/json, text/event-stream
 
@@ -125,7 +125,7 @@ Accept: application/json, text/event-stream
 ###
 
 ### 8. Initialize MCP session (optional)
-POST http://localhost:3000/mcp
+POST https://jokeapp.azurewebsites.net/mcp
 Content-Type: application/json
 Accept: application/json, text/event-stream
 
@@ -148,7 +148,7 @@ Accept: application/json, text/event-stream
 ###
 
 ### 9. Test invalid method (should return error)
-POST http://localhost:3000/mcp
+POST https://jokeapp.azurewebsites.net/mcp
 Content-Type: application/json
 Accept: application/json, text/event-stream
 
@@ -157,33 +157,3 @@ Accept: application/json, text/event-stream
   "method": "invalid/method",
   "id": 9
 }
-
-###
-
-### 10. Test GET request (should return Method not allowed)
-GET http://localhost:3000/mcp
-
-###
-
-### 11. Test root endpoint (should return Cannot GET /)
-GET http://localhost:3000/
-
-###
-
-### Available Chuck Norris Categories:
-### - animal
-### - career
-### - celebrity
-### - dev
-### - explicit
-### - fashion
-### - food
-### - history
-### - money
-### - movie
-### - music
-### - political
-### - religion
-### - science
-### - sport
-### - travel
