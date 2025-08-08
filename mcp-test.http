@@ -1,7 +1,4 @@
 ### MCP Streamable HTTP Server Test File
-### Base URL: http://localhost:3000/mcp
-### Content-Type: application/json
-### Accept: application/json, text/event-stream
 
 ### 1. List all available tools
 POST https://jokeapp.azurewebsites.net/mcp
